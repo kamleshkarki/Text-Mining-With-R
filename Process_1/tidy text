@@ -16,4 +16,225 @@
 1     1 HI I'm Kamlehs karki im new in R s~
 2     2 working on R learn Text mining and~
 3     3 Im in pune -                       
-4     4 Pune is beautiful
+4     4 Pune is beautiful                  
+> library(tidytext)
+Error in library(tidytext) : there is no package called ‘tidytext’
+> text_df %>%
++     unnest_tokens(word, text)
+Error in unnest_tokens(., word, text) : 
+  could not find function "unnest_tokens"
+> library(tidytext)
+Error in library(tidytext) : there is no package called ‘tidytext’
+> 
+> install.packages("tidytext")
+also installing the dependencies ‘lattice’, ‘SnowballC’, ‘ISOcodes’, ‘hunspell’, ‘Matrix’, ‘tokenizers’, ‘janeaustenr’, ‘stopwords’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/lattice_0.20-38.zip'
+Content type 'application/zip' length 1169716 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/SnowballC_0.6.0.zip'
+Content type 'application/zip' length 3083051 bytes (2.9 MB)
+downloaded 2.9 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/ISOcodes_2019.04.22.zip'
+Content type 'application/zip' length 305561 bytes (298 KB)
+downloaded 298 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/hunspell_3.0.zip'
+Content type 'application/zip' length 1843761 bytes (1.8 MB)
+downloaded 1.8 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/Matrix_1.2-17.zip'
+Content type 'application/zip' length 4520659 bytes (4.3 MB)
+downloaded 4.3 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/tokenizers_0.2.1.zip'
+Content type 'application/zip' length 1160462 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/janeaustenr_0.1.5.zip'
+Content type 'application/zip' length 1625475 bytes (1.6 MB)
+downloaded 1.6 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/stopwords_1.0.zip'
+Content type 'application/zip' length 141583 bytes (138 KB)
+downloaded 138 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/tidytext_0.2.2.zip'
+Content type 'application/zip' length 2988646 bytes (2.9 MB)
+downloaded 2.9 MB
+
+package ‘lattice’ successfully unpacked and MD5 sums checked
+package ‘SnowballC’ successfully unpacked and MD5 sums checked
+package ‘ISOcodes’ successfully unpacked and MD5 sums checked
+package ‘hunspell’ successfully unpacked and MD5 sums checked
+package ‘Matrix’ successfully unpacked and MD5 sums checked
+package ‘tokenizers’ successfully unpacked and MD5 sums checked
+package ‘janeaustenr’ successfully unpacked and MD5 sums checked
+package ‘stopwords’ successfully unpacked and MD5 sums checked
+package ‘tidytext’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\ayn-pc2\AppData\Local\Temp\RtmpwHjKBw\downloaded_packages
+> text<- c("HI I'm Kamlehs karki im new in R studio -",
++          "working on R learn Text mining and deep learning -",
++          "Im in pune -",
++          "Pune is beautiful")
+> text
+[1] "HI I'm Kamlehs karki im new in R studio -"         
+[2] "working on R learn Text mining and deep learning -"
+[3] "Im in pune -"                                      
+[4] "Pune is beautiful"                                 
+> library(dplyr)
+> text_df <- tibble(line = 1:4, text = text)
+> text_df
+# A tibble: 4 x 2
+   line text                               
+  <int> <chr>                              
+1     1 HI I'm Kamlehs karki im new in R s~
+2     2 working on R learn Text mining and~
+3     3 Im in pune -                       
+4     4 Pune is beautiful                  
+> library(tidytext)
+> text_df %>%
++     unnest_tokens(words, text)
+# A tibble: 24 x 2
+    line words  
+   <int> <chr>  
+ 1     1 hi     
+ 2     1 i'm    
+ 3     1 kamlehs
+ 4     1 karki  
+ 5     1 im     
+ 6     1 new    
+ 7     1 in     
+ 8     1 r      
+ 9     1 studio 
+10     2 working
+# ... with 14 more rows
+> install.packages("janeaustenr")
+Error in install.packages : Updating loaded packages
+
+Restarting R session...
+
+> install.packages("janeaustenr")
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/janeaustenr_0.1.5.zip'
+Content type 'application/zip' length 1625475 bytes (1.6 MB)
+downloaded 1.6 MB
+
+package ‘janeaustenr’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\ayn-pc2\AppData\Local\Temp\RtmpiaoMRT\downloaded_packages
+> library(janeaustenr)
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> library(janeaustenr)
+> library(dplyr)
+> library(string)
+Error in library(string) : there is no package called ‘string’
+> original_books <-austen_books()%>%
++     unnest_tokens(word, text)
+Error in unnest_tokens(., word, text) : 
+  could not find function "unnest_tokens"
+> tidy_books
+Error: object 'tidy_books' not found
+> install.packages("string")
+Warning in install.packages :
+  package ‘string’ is not available (for R version 3.6.1)
+> library(janeaustenr)
+> library(dplyr)
+> library(stringr)
+Error in library(string) : there is no package called ‘string’
+> original_books <-austen_books()%>%
++     unnest_tokens(word, text)
+Error in unnest_tokens(., word, text) : 
+  could not find function "unnest_tokens"
+> tidy_books
+Error: object 'tidy_books' not found
+> install.packages(tidy_book)
+Error in install.packages : object 'tidy_book' not found
+> install.packages(tidybook)
+Error in install.packages : object 'tidybook' not found
+
+Error in library(string) : there is no package called ‘string’
+> original_books <-austen_books()%>%
++     group_by(book) %>%
++     mutate(linenumber = row_number(),
++            chapter = cumsum(str(str_detecttext, regex("^chapter[\\divxlc]",
++                                                       ignore_case = TRUE)))) %>%
++     ungroup()
+
+> original_books <- austen_books() %>%
++   group_by(book) %>%
++   mutate(linenumber = row_number(),
++          chapter = cumsum(str_detect(text, regex("^chapter [\\divxlc]",
++                                                  ignore_case = TRUE)))) %>%
++   ungroup()
+> 
+> original_books
+# A tibble: 73,422 x 4
+   text                  book                linenumber chapter
+   <chr>                 <fct>                    <int>   <int>
+ 1 SENSE AND SENSIBILITY Sense & Sensibility          1       0
+ 2 ""                    Sense & Sensibility          2       0
+ 3 by Jane Austen        Sense & Sensibility          3       0
+ 4 ""                    Sense & Sensibility          4       0
+ 5 (1811)                Sense & Sensibility          5       0
+ 6 ""                    Sense & Sensibility          6       0
+ 7 ""                    Sense & Sensibility          7       0
+ 8 ""                    Sense & Sensibility          8       0
+ 9 ""                    Sense & Sensibility          9       0
+10 CHAPTER 1             Sense & Sensibility         10       1
+# ... with 73,412 more rows
+> library(tidytext)
+> tidy_books <- original_books %>%
++   unnest_tokens(word, text)
+> 
+> tidy_books
+# A tibble: 725,055 x 4
+   book                linenumber chapter word       
+   <fct>                    <int>   <int> <chr>      
+ 1 Sense & Sensibility          1       0 sense      
+ 2 Sense & Sensibility          1       0 and        
+ 3 Sense & Sensibility          1       0 sensibility
+ 4 Sense & Sensibility          3       0 by         
+ 5 Sense & Sensibility          3       0 jane       
+ 6 Sense & Sensibility          3       0 austen     
+ 7 Sense & Sensibility          5       0 1811       
+ 8 Sense & Sensibility         10       1 chapter    
+ 9 Sense & Sensibility         10       1 1          
+10 Sense & Sensibility         13       1 the        
+# ... with 725,045 more rows
+> data(stop_words)
+> 
+> tidy_books <- tidy_books %>%
++   anti_join(stop_words)
+Joining, by = "word"
+> tidy_books %>%
++   count(word, sort = TRUE) 
+# A tibble: 13,914 x 2
+   word       n
+   <chr>  <int>
+ 1 miss    1855
+ 2 time    1337
+ 3 fanny    862
+ 4 dear     822
+ 5 lady     817
+ 6 sir      806
+ 7 day      797
+ 8 emma     787
+ 9 sister   727
+10 house    699
+# ... with 13,904 more rows
