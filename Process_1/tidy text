@@ -1,1 +1,19 @@
-
+> text<- c("HI I'm Kamlehs karki im new in R studio -",
++          "working on R learn Text mining and deep learning -",
++          "Im in pune -",
++          "Pune is beautiful")
+> text
+[1] "HI I'm Kamlehs karki im new in R studio -"         
+[2] "working on R learn Text mining and deep learning -"
+[3] "Im in pune -"                                      
+[4] "Pune is beautiful"                                 
+> library(dplyr)
+> text_df <- tibble(line = 1:4, text = text)
+> text_df
+# A tibble: 4 x 2
+   line text                               
+  <int> <chr>                              
+1     1 HI I'm Kamlehs karki im new in R s~
+2     2 working on R learn Text mining and~
+3     3 Im in pune -                       
+4     4 Pune is beautiful
